@@ -1,0 +1,15 @@
+<div block:scope ...attributes>
+  {{#if this.peer.hasConnection}}
+    {{#each-in this.peer.connections as |id connection|}}
+      <div block:class="connection">
+        Display: {{connection.metadata.display.id}}<br>
+        Peer: {{connection.peer}}<br>
+        Size: {{connection.metadata.window.width}}x{{connection.metadata.window.height}}px
+      </div>
+    {{/each-in}}
+  {{else}}
+    <div block:class="connection">
+      {{t "setup.connectionList.noConnection"}}
+    </div>
+  {{/if}}
+</div>
