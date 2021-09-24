@@ -1,0 +1,18 @@
+<div block:scope block:is-open={{this.confirm.showPrompt}} ...attributes>
+  <div block:class="overlay" role="button" {{on "click" this.confirm.cancel}}>
+  </div>
+  <div block:class="container">
+    <AnimatedContainer>
+      {{#animated-if this.confirm.showPrompt
+        use=this.slideFromBottom
+        duration=500
+      }}
+        <div block:class="content">
+          {{component
+            (concat "application/confirm/for/" this.confirm.type)
+          }}
+        </div>
+      {{/animated-if}}
+    </AnimatedContainer>
+  </div>
+</div>

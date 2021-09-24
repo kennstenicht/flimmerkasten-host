@@ -1,0 +1,32 @@
+<div
+  block:scope
+  block:type={{@flash.type}}
+  block:is-exiting={{@flash.exiting}}
+  role="alert"
+  {{on "mouseenter" this.preventExiting}}
+  {{on "mouseleave" this.allowExiting}}
+  ...attributes
+>
+  <div
+    block:class="close"
+    role="button"
+    {{on "click" @flash.destroyMessage}}
+  >
+    {{svg-jar "cancel" class="o-icon"}}
+  </div>
+    {{#if (eq @flash.type "success")}}
+      {{svg-jar "check_circle" class=(style-of block:class="icon")}}
+    {{else}}
+      {{svg-jar "error" class=(style-of block:class="icon")}}
+    {{/if}}
+  <div block:class="content">
+    <div block:class="message">
+      {{@flash.message}}
+    </div>
+    {{#unless @flash.sticky}}
+      <div block:class="progress">
+        <div block:class="bar" {{did-insert this.startProgress}}></div>
+      </div>
+    {{/unless}}
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div block:scope>
+  {{#if @model.errors}}
+    {{#each @model.errors as |error|}}
+      <div block:class="status">
+        {{error.status}}
+      </div>
+      <h1 block:class="title">
+        {{error.title}}
+      </h1>
+      <div block:class="detail">
+        {{error.detail}}
+      </div>
+    {{/each}}
+  {{else}}
+    <div block:class="status">
+      {{t "error.status"}}
+    </div>
+    <h1 block:class="title">
+      {{t "error.title"}}
+    </h1>
+    <div block:class="detail">
+      {{t "error.detail"}}
+    </div>
+  {{/if}}
+</div>

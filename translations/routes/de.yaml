@@ -1,0 +1,12 @@
+application:
+  meta:
+    description: Nach dem großen Erfolg der ersten Videopyramide haben wir uns entschlossen das ganze auf eine ganz neues Level zu heben.
+    title: Videopyramide 2.0
+
+error:
+  meta:
+    description: Fehler sind menschlich, aber natürlich arbeiten wir mit Hochdruck daran auch diesen Fehler zu reparieren, damit du nicht noch mal hier landest.
+    title: Autsch! Da gab es einen Fehler!
+  detail: Wir konnten deine angefragte Seite nicht finden. Möglicherweise hast du dich bei der Eingabe der URL vertippt?
+  status: '404'
+  title: Seite wurde nicht gefunden

@@ -7,6 +7,20 @@ module.exports = function (environment) {
     environment,
     rootURL: '/',
     locationType: 'auto',
+
+    company: {
+      name: 'Flimmerkasten',
+    },
+
+    emberKeyboard: {
+      disableInputsInitializer: true
+    },
+
+    flashMessageDefaults: {
+      timeout: 4000,
+      extendedTimeout: 2000
+    },
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

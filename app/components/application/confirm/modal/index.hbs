@@ -1,0 +1,32 @@
+<div
+  block:scope
+  role='dialog'
+  aria-labelledby='dialog-label'
+  aria-describedby='dialog-description'
+  ...attributes
+>
+  <h2 block:class='title' id='dialog-label'>
+    {{yield this.confirm to='title'}}
+  </h2>
+  <div block:class='message' id='dialog-description'>
+    {{yield this.confirm to='message'}}
+  </div>
+
+  {{#if (has-block 'actions')}}
+    {{yield this.confirm to='actions'}}
+  {{else}}
+    <Ui::Button
+      @label={{this.cancelLabel}}
+      @onClick={{@confirm.confirm}}
+      @icon='delete'
+      @style='danger'
+    />
+
+    <Ui::Button
+      @label={{this.confirmLabel}}
+      @onClick={{@confirm.cancel}}
+      @icon='cancel'
+      @style='secondary'
+    />
+  {{/if}}
+</div>

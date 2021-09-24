@@ -1,0 +1,117 @@
+// Imports
+@import 'setup';
+
+
+// Block
+:scope {
+  block-name: c-ui-button;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: spacing('base-small');
+  min-height: spacing('base-small');
+  vertical-align: bottom;
+  transition: background-color $transition-base;
+}
+
+  .icon {
+    flex-shrink: 0;
+
+    fill: currentColor;
+  }
+
+  .icon[has-label] {
+    margin-right: spacing('tiny');
+  }
+
+  .label {
+    flex-grow: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    @include font-size($font-size-small);
+  }
+
+
+// Primary
+:scope[style=primary] {
+  padding: spacing('tiny') spacing('base');
+  border-radius: spacing('small-tiny');
+  background-color: $color-primary;
+  color: $color-white;
+  text-align: center;
+
+  @include attention() {
+    background-color: $color-primary-dark;
+  }
+}
+
+
+// Secondary
+:scope[style=secondary] {
+  padding: spacing('tiny') spacing('base');
+  border-radius: spacing('small-tiny');
+  background-color: $color-grey-dark;
+  color: $color-white;
+  text-align: center;
+
+  @include attention() {
+    background-color: darken($color-grey-dark, 10%);
+  }
+}
+
+
+// Danger
+:scope[style=danger] {
+  padding: spacing('tiny') spacing('base');
+  border-radius: spacing('small-tiny');
+  background-color: $color-error;
+  color: $color-white;
+  text-align: center;
+
+  @include attention() {
+    background-color: $color-error-dark;
+  }
+}
+
+
+// Inline
+:scope[style=inline] {
+  padding: 0 spacing('tiny');
+  min-width: spacing('base');
+  min-height: spacing('base');
+  border-radius: spacing('tiny');
+  color: inherit;
+  text-align: center;
+
+  @include attention() {
+    background-color: rgba($color-grey, 0.5);
+  }
+
+  &[is-active] {
+    background-color: $color-active;
+    color: $color-white;
+  }
+}
+
+
+// Outline
+:scope[style=outline] {
+  padding: spacing('tiny', - $border-width-small);
+  border: $border-width-small solid $color-grey;
+  border-radius: spacing('small-tiny');
+  color: inherit;
+  text-align: center;
+
+  @include attention() {
+    background-color: $color-grey-light;
+  }
+}
+
+
+// Disabled
+:scope:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

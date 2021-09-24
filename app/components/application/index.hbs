@@ -1,0 +1,17 @@
+<div block:scope ...attributes>
+  {{#if this.isDevelopment}}
+    <AnimatedTools @hideUntilKeys="Shift-KeyD" />
+  {{/if}}
+
+  <div block:class="notifications">
+    {{#each this.flashMessages.queue as |flash|}}
+      <Application::Notification @flash={{flash}} />
+    {{/each}}
+  </div>
+
+  <div block:class="content">
+    {{yield}}
+  </div>
+
+  <Application::Confirm />
+</div>
