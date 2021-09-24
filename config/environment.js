@@ -3,6 +3,7 @@
 module.exports = function (environment) {
   let ENV = {
     modulePrefix: 'flimmerkasten-host',
+    podModulePrefix: 'flimmerkasten-host/routes',
     environment,
     rootURL: '/',
     locationType: 'auto',
