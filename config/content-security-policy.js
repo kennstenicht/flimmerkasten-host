@@ -8,7 +8,7 @@ module.exports = function (environment) {
       'script-src': ["'self'", "'unsafe-inline'", 'eval'],
       'font-src': ["'self'", 'https://fonts.gstatic.com'],
       'frame-src': ["'self'"],
-      'connect-src': ["'self'"],
+      'connect-src': ["'self'", 'wss://flimmerkasten.herokuapp.com'],
       'img-src': ['data:', "'self'"],
       'style-src': [
         "'self'",
