@@ -5,6 +5,13 @@
         Display: {{connection.metadata.display.id}}<br>
         Peer: {{connection.peer}}<br>
         Size: {{connection.metadata.window.width}}x{{connection.metadata.window.height}}px
+        {{!-- template-lint-disable require-input-label --}}
+        <Input @value={{this.value}} />
+        <Ui::Button
+          {{on "click" (fn this.sendMessage connection)}}
+        >
+          Send
+        </Ui::Button>
       </div>
     {{/each-in}}
   {{else}}
