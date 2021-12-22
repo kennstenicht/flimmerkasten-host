@@ -18,7 +18,7 @@
 }
 
   .status {
-    @include font-size(120px);
+    @include inuit-font-size(120px);
     color: $color-grey;
     font-family: $font-family-decoration;
   }

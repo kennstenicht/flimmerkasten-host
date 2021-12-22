@@ -1,10 +1,8 @@
-// Imports
-@import 'setup';
+/* ==========================================================================
+   # APPLICATION NOTIFICATION
+   ========================================================================== */
 
-
-// Block
-:scope {
-  block-name: c-application-notification;
+.c-application-notification {
   position: relative;
   display: flex;
   margin-bottom: spacing('tiny');
@@ -13,45 +11,44 @@
   border-radius: spacing('tiny');
   transition: all 0.3s ease-in-out;
   box-shadow: 0 0 spacing('large') rgba($color-black, 0.4);
-}
 
-:scope[type='warning'] {
-  background-color: $color-warning;
-  color: $color-white;
-}
+  &--type-warning {
+    background-color: $color-warning;
+    color: $color-white;
+  }
 
-:scope[type='success'] {
-  background-color: $color-success;
-  color: $color-white;
-}
+  &--type-success {
+    background-color: $color-success;
+    color: $color-white;
+  }
 
-:scope[is-exiting] {
-  opacity: 0;
-  transform: translateX(200%);
-}
+  &--is-exiting {
+    opacity: 0;
+    transform: translateX(200%);
+  }
 
-  .close {
+  &__close {
     position: absolute;
     top: spacing('tiny');
     right: spacing('tiny');
   }
 
-  .icon {
+  &__icon {
     margin-right: spacing('small');
     width: spacing('base');
     height: spacing('base');
   }
 
-  .content {
+  &__content {
     display: block;
   }
 
-    .message {
+    &__message {
       margin-bottom: spacing('small');
       padding-right: spacing('small-tiny');
     }
 
-    .progress {
+    &__progress {
       position: relative;
       width: 100%;
       height: 4px;
@@ -59,7 +56,7 @@
       background-color: rgba($color-black, 0.2);
     }
 
-      .bar {
+      &__bar {
         position: absolute;
         top: 0;
         bottom: 0;
@@ -72,6 +69,7 @@
         transition-property: width;
       }
 
-      .bar[active] {
+      &__bar--is-active {
         width: 100%;
       }
+}

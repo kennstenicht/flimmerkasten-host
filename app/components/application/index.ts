@@ -8,6 +8,10 @@ export default class ApplicationComponent extends Component {
   @service flashMessages!: FlashService;
 
 
+  // Defaults
+  blockName = 'c-application';
+
+
   // Getter and Setter
   get isDevelopment() {
     return ENV.environment === 'development';

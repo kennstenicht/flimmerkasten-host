@@ -1,0 +1,25 @@
+/* ==========================================================================
+   # APPLICATION
+   ========================================================================== */
+
+.c-application {
+  height: 100vh;
+
+  &__notifications {
+    position: fixed;
+    top: spacing('small');
+    right: spacing('small');
+    z-index: 900;
+  }
+
+  &__content {
+    display: block;
+    padding: spacing('small');
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  &__modal {
+    position: relative;
+  }
+}

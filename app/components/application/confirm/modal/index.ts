@@ -9,6 +9,10 @@ export default class ApplicationConfirmModalComponent extends Component {
   @service intl!: IntlService;
 
 
+  // Defaults
+  blockName = 'c-application-confirm-modal';
+
+
   // Getter, setter and computed properties
   get cancelLabel() {
     return this.intl.t(`application.confirm.for.${this.confirm.type}.cancel`);

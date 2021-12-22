@@ -14,6 +14,7 @@ export default class SetupComponent extends Component <Args> {
 
 
   // Defaults
+  blockName = "c-setup-connection-list";
   @tracked value: string = '';
 
 

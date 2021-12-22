@@ -1,16 +1,17 @@
 <button
-  block:scope
-  block:style={{@style}}
-  block:is-active={{@isActive}}
+  class={{bem
+    this.blockName
+    modifiers=(hash style=@style is-active=@isActive has-label=(has-block))
+  }}
   disabled={{@disabled}}
   type={{this.type}}
   ...attributes
 >
   {{#if @icon}}
-    {{svg-jar @icon class=(style-of block:class="icon" block:has-label=@label)}}
+    {{svg-jar @icon class=(bem this.blockName "icon")}}
   {{/if}}
   {{#if (has-block)}}
-    <div block:class="label">
+    <div class={{bem this.blockName "label"}}>
       {{yield}}
     </div>
   {{/if}}

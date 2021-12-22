@@ -16,6 +16,10 @@ export default class ApplicationConfirm extends Component {
   @service confirm!: Confirm;
 
 
+  // Defaults
+  blockName = 'c-application-confirm';
+
+
   // Keyboard actions
   @onKey('Enter')
   confirmOnEnter(event: Event) {

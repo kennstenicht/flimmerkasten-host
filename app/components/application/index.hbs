@@ -1,17 +1,14 @@
-<div block:scope ...attributes>
+<div class={{bem this.blockName}} ...attributes>
   {{#if this.isDevelopment}}
     <AnimatedTools @hideUntilKeys="Shift-KeyD" />
   {{/if}}
-
-  <div block:class="notifications">
+  <div class={{bem this.blockName "notifications"}}>
     {{#each this.flashMessages.queue as |flash|}}
       <Application::Notification @flash={{flash}} />
     {{/each}}
   </div>
-
-  <div block:class="content">
+  <div class={{bem this.blockName "content"}}>
     {{yield}}
   </div>
-
   <Application::Confirm />
 </div>

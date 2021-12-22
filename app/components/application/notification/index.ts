@@ -9,6 +9,10 @@ interface Args {
 }
 
 export default class ApplicationNotificationComponent extends Component<Args> {
+  // Defaults
+  blockName = 'c-application-notification';
+
+
   // Actions
   @action
   preventExiting() {

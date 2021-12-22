@@ -1,31 +1,25 @@
 <div
-  block:scope
-  role='dialog'
-  aria-labelledby='dialog-label'
-  aria-describedby='dialog-description'
+  class={{bem this.blockName}}
+  role="dialog"
+  aria-labelledby="dialog-label"
+  aria-describedby="dialog-description"
   ...attributes
 >
-  <h2 block:class='title' id='dialog-label'>
-    {{yield this.confirm to='title'}}
+  <h2 class={{bem this.blockName "title"}} id="dialog-label">
+    {{yield this.confirm to="title"}}
   </h2>
-  <div block:class='message' id='dialog-description'>
-    {{yield this.confirm to='message'}}
+  <div lass={{bem this.blockName "message"}} id="dialog-description">
+    {{yield this.confirm to="message"}}
   </div>
-
-  {{#if (has-block 'actions')}}
-    {{yield this.confirm to='actions'}}
+  {{#if (has-block "actions")}}
+    {{yield this.confirm to="actions"}}
   {{else}}
-    <Ui::Button
-      @icon='delete'
-      @style='danger'
-      {{on "click" @confirm.confirm}}
-    >
+    <Ui::Button @icon="delete" @style="danger" {{on "click" @confirm.confirm}}>
       {{this.cancelLabel}}
     </Ui::Button>
-
     <Ui::Button
-      @icon='cancel'
-      @style='secondary'
+      @icon="cancel"
+      @style="secondary"
       {{on "click" @confirm.cancel}}
     >
       {{this.confirmLabel}}

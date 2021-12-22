@@ -1,21 +1,15 @@
 /* ==========================================================================
-   # APPLICATION CONFIRM DELETE
+   # APPLICATION CONFIRM MODAL
    ========================================================================== */
 
-// Imports
-@import 'setup';
-
-
-// Block
-:scope {
-  block-name: c-application-confirm-delete;
+.c-application-confirm-modal {
   padding: spacing();
-}
 
-  .title {
+  &__title {
     margin-bottom: spacing('small');
   }
 
-  .message {
+  &__message {
     margin-bottom: spacing();
   }
+}
