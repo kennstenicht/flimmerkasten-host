@@ -4,15 +4,14 @@
   block:is-active={{@isActive}}
   disabled={{@disabled}}
   type={{this.type}}
-  {{on "click" this.onClick}}
   ...attributes
 >
   {{#if @icon}}
     {{svg-jar @icon class=(style-of block:class="icon" block:has-label=@label)}}
   {{/if}}
-  {{#if @label}}
+  {{#if (has-block)}}
     <div block:class="label">
-      {{@label}}
+      {{yield}}
     </div>
   {{/if}}
 </button>

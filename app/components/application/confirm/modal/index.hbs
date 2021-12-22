@@ -16,17 +16,19 @@
     {{yield this.confirm to='actions'}}
   {{else}}
     <Ui::Button
-      @label={{this.cancelLabel}}
-      @onClick={{@confirm.confirm}}
       @icon='delete'
       @style='danger'
-    />
+      {{on "click" @confirm.confirm}}
+    >
+      {{this.cancelLabel}}
+    </Ui::Button>
 
     <Ui::Button
-      @label={{this.confirmLabel}}
-      @onClick={{@confirm.cancel}}
       @icon='cancel'
       @style='secondary'
-    />
+      {{on "click" @confirm.cancel}}
+    >
+      {{this.confirmLabel}}
+    </Ui::Button>
   {{/if}}
 </div>
