@@ -5,15 +5,25 @@ module.exports = function (environment) {
     failTests: true,
     policy: {
       'default-src': ["'none'"],
-      'script-src': ["'self'", "'unsafe-inline'", 'eval'],
-      'font-src': ["'self'", 'https://fonts.gstatic.com'],
-      'frame-src': ["'self'"],
-      'connect-src': ["'self'", 'wss://flimmerkasten.herokuapp.com'],
-      'img-src': ['data:', "'self'"],
-      'style-src': [
+      'script-src': [
+        'http://localhost:4200',
         "'self'",
         "'unsafe-inline'",
-        'https://fonts.googleapis.com',
+        'eval',
+        "'unsafe-eval'"
+      ],
+      'font-src': ["'self'", 'https://fonts.gstatic.com'],
+      'frame-src': ["'self'"],
+      'connect-src': [
+        "'self'",
+        'wss://flimmerkasten.herokuapp.com'
+      ],
+      'img-src': ['data:', "'self'"],
+      'style-src': [
+        'http://localhost:4200',
+        "'self'",
+        "'unsafe-inline'",
+        'https://fonts.googleapis.com'
       ],
       'media-src': ["'self'"],
     },
