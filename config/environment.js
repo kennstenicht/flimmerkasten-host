@@ -6,7 +6,7 @@ module.exports = function (environment) {
     podModulePrefix: 'flimmerkasten-host/routes',
     environment,
     rootURL: '/',
-    locationType: 'auto',
+    locationType: 'history',
 
     company: {
       name: 'Flimmerkasten',
