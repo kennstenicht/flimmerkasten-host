@@ -1,6 +1,6 @@
 import Service from '@ember/service';
 import { action } from '@ember/object';
-import { inject as service } from '@ember/service';
+import { service } from '@ember/service';
 import { registerDestructor } from '@ember/destroyable';
 import { TrackedMap } from 'tracked-maps-and-sets';
 import Peer, { DataConnection } from 'peerjs';

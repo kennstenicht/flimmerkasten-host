@@ -1,5 +1,5 @@
 import Component from '@glimmer/component';
-import { inject as service } from '@ember/service';
+import { service } from '@ember/service';
 import Confirm from 'flimmerkasten-host/services/confirm';
 // @ts-ignore
 import { keyResponder, onKey } from 'ember-keyboard';
