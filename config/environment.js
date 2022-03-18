@@ -18,7 +18,8 @@ module.exports = function (environment) {
 
     flashMessageDefaults: {
       timeout: 4000,
-      extendedTimeout: 2000
+      extendedTimeout: 2000,
+      injectionFactories: []
     },
 
     EmberENV: {
