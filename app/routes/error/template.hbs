@@ -1,27 +1,29 @@
 {{page-title "Error"}}
 
-<div block:scope>
-  {{#if @model.errors}}
-    {{#each @model.errors as |error|}}
-      <div block:class="status">
-        {{error.status}}
+{{#let "c-error" as |blockName|}}
+  <div class={{bem blockName}}>
+    {{#if @model.errors}}
+      {{#each @model.errors as |error|}}
+        <div class={{bem blockName "status"}}>
+          {{error.status}}
+        </div>
+        <h1 class={{bem blockName "title"}}>
+          {{error.title}}
+        </h1>
+        <div class={{bem blockName "detail"}}>
+          {{error.detail}}
+        </div>
+      {{/each}}
+    {{else}}
+      <div class={{bem blockName "status"}}>
+        {{t "error.status"}}
       </div>
-      <h1 block:class="title">
-        {{error.title}}
+      <h1 class={{bem blockName "title"}}>
+        {{t "error.title"}}
       </h1>
-      <div block:class="detail">
-        {{error.detail}}
+      <div class={{bem blockName "detail"}}>
+        {{t "error.detail"}}
       </div>
-    {{/each}}
-  {{else}}
-    <div block:class="status">
-      {{t "error.status"}}
-    </div>
-    <h1 block:class="title">
-      {{t "error.title"}}
-    </h1>
-    <div block:class="detail">
-      {{t "error.detail"}}
-    </div>
-  {{/if}}
-</div>
+    {{/if}}
+  </div>
+{{/let}}

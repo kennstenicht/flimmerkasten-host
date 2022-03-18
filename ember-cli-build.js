@@ -10,7 +10,6 @@ module.exports = function (defaults) {
     },
     sassOptions: {
       outputStyle: 'compressed',
-      includePaths: ['node_modules'],
     }
   });
 

@@ -5,7 +5,7 @@
 @import "settings/settings.fonts";
 @import "settings/settings.global";
 // Inuitcss
-@import "inuitcss/settings/settings.core";
+@import "node_modules/inuitcss/settings/settings.core";
 
 
 
@@ -15,10 +15,10 @@
   ========================================================================== */
 
 // Inuitcss
-@import "inuitcss/tools/tools.font-size";
-@import "inuitcss/tools/tools.clearfix";
+@import "node_modules/inuitcss/tools/tools.font-size";
+@import "node_modules/inuitcss/tools/tools.clearfix";
 // Vendor
-@import "sass-mq/mq";
+@import "node_modules/sass-mq/mq";
 // App
 @import "tools/tools.attention";
 @import "tools/tools.rem";
@@ -33,10 +33,10 @@
   ========================================================================== */
 
 // Inuitcss
-@import "inuitcss/generic/generic.box-sizing";
-@import "inuitcss/generic/generic.normalize";
-@import "inuitcss/generic/generic.reset";
-@import "inuitcss/generic/generic.shared";
+@import "node_modules/inuitcss/generic/generic.box-sizing";
+@import "node_modules/inuitcss/generic/generic.normalize";
+@import "node_modules/inuitcss/generic/generic.reset";
+@import "node_modules/inuitcss/generic/generic.shared";
 
 
 
@@ -55,8 +55,8 @@
   ========================================================================== */
 
 // Inuitcss
-@import "inuitcss/objects/objects.layout";
-@import "inuitcss/objects/objects.wrapper";
+@import "node_modules/inuitcss/objects/objects.layout";
+@import "node_modules/inuitcss/objects/objects.wrapper";
 
 
 
@@ -69,6 +69,7 @@
 @import "components/components.application-confirm";
 @import "components/components.application-notification";
 @import "components/components.application";
+@import "components/components.error";
 @import "components/components.setup-connection-list";
 @import "components/components.setup";
 @import "components/components.ui-button";
@@ -81,5 +82,5 @@
   ========================================================================== */
 
 // Inuitcss
-@import "inuitcss/utilities/utilities.spacings";
-@import "inuitcss/utilities/utilities.widths";
+@import "node_modules/inuitcss/utilities/utilities.spacings";
+@import "node_modules/inuitcss/utilities/utilities.widths";
