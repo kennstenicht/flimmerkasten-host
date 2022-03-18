@@ -1,7 +1,4 @@
 <div class={{bem this.blockName}} ...attributes>
-  {{#if this.isDevelopment}}
-    <AnimatedTools @hideUntilKeys="Shift-KeyD" />
-  {{/if}}
   <div class={{bem this.blockName "notifications"}}>
     {{#each this.flashMessages.queue as |flash|}}
       <Application::Notification @flash={{flash}} />

@@ -8,16 +8,10 @@
     {{on "click" this.confirm.cancel}}
   ></div>
   <div class={{bem this.blockName "container"}}>
-    <AnimatedContainer>
-      {{#animated-if
-        this.confirm.showPrompt
-        use=this.slideFromBottom
-        duration=500
-      }}
-        <div class={{bem this.blockName "content"}}>
-          {{component (concat "application/confirm/for/" this.confirm.type)}}
-        </div>
-      {{/animated-if}}
-    </AnimatedContainer>
+    {{#if this.confirm.showPrompt}}
+      <div class={{bem this.blockName "content"}}>
+        {{component (concat "application/confirm/for/" this.confirm.type)}}
+      </div>
+    {{/if}}
   </div>
 </div>
