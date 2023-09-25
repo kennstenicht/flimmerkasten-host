@@ -4,63 +4,39 @@
 // Theme
 @import "settings/settings.fonts";
 @import "settings/settings.global";
-// Inuitcss
-@import "node_modules/inuitcss/settings/settings.core";
-
-
-
-
+@import "settings/settings.core";
 
 /* Tools
   ========================================================================== */
 
-// Inuitcss
-@import "node_modules/inuitcss/tools/tools.font-size";
-@import "node_modules/inuitcss/tools/tools.clearfix";
 // Vendor
 @import "node_modules/sass-mq/mq";
 // App
 @import "tools/tools.attention";
+@import "tools/tools.clearfix";
+@import "tools/tools.font-size";
 @import "tools/tools.rem";
 @import "tools/tools.spacing";
-
-
-
-
-
 
 /* Generic
   ========================================================================== */
 
-// Inuitcss
-@import "node_modules/inuitcss/generic/generic.box-sizing";
-@import "node_modules/inuitcss/generic/generic.normalize";
-@import "node_modules/inuitcss/generic/generic.reset";
-@import "node_modules/inuitcss/generic/generic.shared";
-
-
-
+@import "generic/generic.box-sizing";
+@import "generic/generic.normalize";
+@import "generic/generic.reset";
+@import "generic/generic.shared";
 
 /* Elementes
   ========================================================================== */
 
-// App
 @import "elements/elements.headings";
 @import "elements/elements.page";
-
-
-
 
 /* Objects
   ========================================================================== */
 
-// Inuitcss
-@import "node_modules/inuitcss/objects/objects.layout";
-@import "node_modules/inuitcss/objects/objects.wrapper";
-
-
-
-
+@import "objects/objects.layout";
+@import "objects/objects.wrapper";
 
 /* Components
   ========================================================================== */
@@ -74,13 +50,7 @@
 @import "components/components.setup";
 @import "components/components.ui-button";
 
-
-
-
-
 /* Utilities
   ========================================================================== */
 
-// Inuitcss
-@import "node_modules/inuitcss/utilities/utilities.spacings";
-@import "node_modules/inuitcss/utilities/utilities.widths";
+@import "utilities/utilities.widths";

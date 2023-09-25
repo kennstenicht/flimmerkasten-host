@@ -3,6 +3,7 @@
    ========================================================================== */
 
 // Convert any px value into its rem equivalent.
+@use "sass:math";
 
 @function rem($value) {
   @if (type-of($value) == number) {
@@ -13,9 +14,8 @@
     @error "`#{$value}` needs to be a number.";
   }
 
-  @return ($value / $font-size) * 1rem;
+  @return math.div($value, $font-size) * 1rem;
 }
-
 
 // Mixin to create a declaration whose value is a rem unit. Also provide pixel
 // fallback.

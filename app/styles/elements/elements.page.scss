@@ -14,11 +14,13 @@
 * 3. Ensure the page always fills at least the entire height of the viewport.
 */
 
+@use "sass:math";
+
 html {
   overflow-y: scroll; /* [2] */
   min-height: 100%; /* [3] */
-  font-size: ($font-size / 16px) * 1em; /* [1] */
-  line-height: $baseline * (4 / $font-size); /* [1] */
+  font-size: math.div($font-size, 16px) * 1em; /* [1] */
+  line-height: $baseline * math.div(4, $font-size); /* [1] */
 }
 
 body {
