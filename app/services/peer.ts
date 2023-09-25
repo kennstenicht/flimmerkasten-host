@@ -2,10 +2,9 @@ import Service from '@ember/service';
 import { action } from '@ember/object';
 import { service } from '@ember/service';
 import { registerDestructor } from '@ember/destroyable';
-import { TrackedMap } from 'tracked-maps-and-sets';
+import { TrackedMap } from 'tracked-built-ins';
 import Peer, { DataConnection } from 'peerjs';
 import { restartableTask, timeout } from 'ember-concurrency';
-import { taskFor } from 'ember-concurrency-ts';
 import FlashMessageService from 'ember-cli-flash/services/flash-messages';
 
 export default class PeerService extends Service {
@@ -22,7 +21,6 @@ export default class PeerService extends Service {
   constructor() {
     super(...arguments);
 
-    taskFor(this.createPeerConnection).perform();
 
     registerDestructor(this, () => {
       this.peer?.destroy();
@@ -56,7 +54,7 @@ export default class PeerService extends Service {
   onPeerError(error: any) {
     switch (error.type) {
       case 'network':
-        taskFor(this.retryPeerConnection).perform();
+        this.retryPeerConnection.perform();
         break;
 
       default:
@@ -67,8 +65,7 @@ export default class PeerService extends Service {
 
 
   // Tasks
-  @restartableTask
-  *createPeerConnection() {
+  createPeerConnection = restartableTask(async () => {
     this.peer = new Peer('master-peer', {
       host: 'flimmerkasten.herokuapp.com',
       secure: true
@@ -76,12 +73,11 @@ export default class PeerService extends Service {
 
     this.peer.on('error', this.onPeerError);
     this.peer.on('connection', this.onPeerConnection);
-  }
+  })
 
-  @restartableTask
-  *retryPeerConnection() {
-    yield timeout(10000);
+  retryPeerConnection = restartableTask(async () => {
+    await timeout(10000);
 
-    taskFor(this.createPeerConnection).perform();
-  }
+    this.createPeerConnection.perform();
+  })
 }
