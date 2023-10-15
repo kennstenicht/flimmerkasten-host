@@ -1,36 +1,30 @@
 {
+  "extends": "@tsconfig/ember/tsconfig.json",
   "compilerOptions": {
-    "target": "es2020",
-    "allowJs": true,
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "strictNullChecks": true,
-    "strictPropertyInitialization": true,
+    // Strictness settings -- you should *not* change these: Ember code is not
+    // guaranteed to type check with these set to looser values.
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+
+    // You should feel free to change these, especially if you are already
+    // covering them via linting (e.g. with @typescript-eslint).
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
-    "noEmitOnError": true,
-    "noEmit": true,
-    "inlineSourceMap": true,
-    "inlineSources": true,
+    "noPropertyAccessFromIndexSignature": true,
+
+    // The combination of `baseUrl` with `paths` allows Ember's classic package
+    // layout, which is not resolvable with the Node resolution algorithm, to
+    // work with TypeScript.
     "baseUrl": ".",
-    "module": "es6",
-    "experimentalDecorators": true,
     "paths": {
-      "flimmerkasten-host/tests/*": [
-        "tests/*"
-      ],
-      "flimmerkasten-host/*": [
-        "app/*"
-      ],
-      "*": [
-        "types/*"
-      ]
-    }
+      "flimmerkasten-host/tests/*": ["tests/*"],
+      "flimmerkasten-host/*": ["app/*"],
+      "*": ["types/*"]
+    },
+
+    "skipLibCheck": true
   },
   "include": [
     "app/**/*",
