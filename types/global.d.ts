@@ -5,3 +5,8 @@ declare module 'flimmerkasten-host/templates/*' {
   const tmpl: TemplateFactory;
   export default tmpl;
 }
+
+declare module '*.css' {
+  const styles: { [className: string]: string };
+  export default styles;
+}

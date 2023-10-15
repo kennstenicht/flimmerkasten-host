@@ -2,6 +2,7 @@ import Component from '@glimmer/component';
 import { hash } from '@ember/helper';
 import svgJar from 'ember-svg-jar/types';
 import bem from 'flimmerkasten-host/helpers/bem';
+import styles from './styles.css';
 
 interface ButtonSignature {
   Element: HTMLButtonElement;
@@ -15,22 +16,16 @@ interface ButtonSignature {
 }
 
 export default class Button extends Component<ButtonSignature> {
-  // Defaults
-  blockName = 'c-ui-button';
-
   <template>
     <button
-      class={{bem
-        this.blockName
-        modifiers=(hash style=@style has-label=(has-block))
-      }}
+      class={{bem styles (hash style=@style has-label=(has-block))}}
       ...attributes
     >
       {{#if @icon}}
-        {{svgJar @icon class=(bem this.blockName 'icon')}}
+        {{svgJar @icon class=(bem styles 'icon')}}
       {{/if}}
       {{#if (has-block)}}
-        <div class={{bem this.blockName 'label'}}>
+        <div class={{bem styles 'label'}}>
           {{yield}}
         </div>
       {{/if}}

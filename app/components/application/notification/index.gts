@@ -9,6 +9,7 @@ import Flash from 'ember-cli-flash/flash/object';
 import svgJar from 'ember-svg-jar/types';
 import eq from 'ember-truth-helpers/helpers/eq';
 import bem from 'flimmerkasten-host/helpers/bem';
+import styles from './styles.css';
 
 interface NotificationSignature {
   Element: HTMLDivElement;
@@ -16,15 +17,12 @@ interface NotificationSignature {
     flash: Flash & {
       message?: string;
       sticky?: boolean;
-      type?: 'success' | 'error';
+      type?: string;
     };
   };
 }
 
 export default class Notification extends Component<NotificationSignature> {
-  // Defaults
-  blockName = 'c-application-notification';
-
   // Functions
   @action preventExiting() {
     const flash = this.args.flash;
@@ -55,35 +53,32 @@ export default class Notification extends Component<NotificationSignature> {
 
   <template>
     <div
-      class={{bem
-        this.blockName
-        modifier=(hash type=@flash.type is-exiting=@flash.exiting)
-      }}
+      class={{bem styles (hash type=@flash.type is-exiting=@flash.exiting)}}
       role='alert'
       ...attributes
       {{on 'mouseenter' this.preventExiting}}
       {{on 'mouseleave' this.allowExiting}}
     >
       <div
-        class={{bem this.blockName 'close'}}
+        class={{bem styles 'close'}}
         role='button'
         {{on 'click' @flash.destroyMessage}}
       >
         {{svgJar 'cancel' class='o-icon'}}
       </div>
       {{#if (eq @flash.type 'success')}}
-        {{svgJar 'check_circle' class=(bem this.blockName 'icon')}}
+        {{svgJar 'check_circle' class=(bem styles 'icon')}}
       {{else}}
-        {{svgJar 'error' class=(bem this.blockName 'icon')}}
+        {{svgJar 'error' class=(bem styles 'icon')}}
       {{/if}}
-      <div class={{bem this.blockName 'content'}}>
-        <div class={{bem this.blockName 'message'}}>
+      <div class={{bem styles 'content'}}>
+        <div class={{bem styles 'message'}}>
           {{@flash.message}}
         </div>
         {{#unless @flash.sticky}}
-          <div class={{bem this.blockName 'progress'}}>
+          <div class={{bem styles 'progress'}}>
             <div
-              class={{bem this.blockName 'bar'}}
+              class={{bem styles 'bar'}}
               {{didInsert this.startProgress}}
             ></div>
           </div>

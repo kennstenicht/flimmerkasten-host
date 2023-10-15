@@ -1,0 +1,74 @@
+/* ==========================================================================
+   # APPLICATION NOTIFICATION
+   ========================================================================== */
+
+.scope {
+  position: relative;
+  display: flex;
+  margin-bottom: var(--spacing-tiny);
+  padding: var(--spacing-small);
+  max-width: 500px;
+  border-radius: var(--spacing-tiny);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 spacing("large") rgba($color-black, 0.4);
+}
+.scope--type-warning {
+  background-color: var(--color-warning);
+  color: $color-white;
+}
+
+.scope--type-success {
+  background-color: var(--color-success);
+  color: var(--color-white);
+}
+
+.scope--is-exiting {
+  opacity: 0;
+  transform: translateX(200%);
+}
+
+.close {
+  position: absolute;
+  top: var(--spacing-tiny);
+  right: var(--spacing-tiny);
+}
+
+.icon {
+  margin-right: var(--spacing-small);
+  width: var(--spacing-base);
+  height: var(--spacing-base);
+}
+
+.content {
+  display: block;
+}
+
+.message {
+  margin-bottom: var(--spacing-small);
+  padding-right: var(--spacing-small-tiny);
+}
+
+.progress {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  border-radius: var(--spacing-tiny);
+  background-color: rgba(var(--color-black), 0.2);
+}
+
+.bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  border-radius: var(--spacing-tiny);
+  background-color: var(--color-white);
+  transition-timing-function: ease-in-out;
+  transition-duration: 4000ms;
+  transition-property: width;
+}
+
+.bar--is-active {
+  width: 100%;
+}

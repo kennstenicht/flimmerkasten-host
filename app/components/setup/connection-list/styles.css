@@ -1,0 +1,17 @@
+/* ==========================================================================
+   # SETUP / CONNECTION LIST
+   ========================================================================== */
+
+.scope {
+  display: block;
+  overflow: auto;
+  max-height: 100%;
+}
+
+.connection {
+  margin-bottom: var(--spacing-tiny);
+  padding: var(--spacing-small);
+  border-radius: var(--spacing-tiny);
+  background-color: var(--color-white);
+  color: var(--color-black);
+}

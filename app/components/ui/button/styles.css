@@ -1,0 +1,37 @@
+/* ==========================================================================
+   # UI / BUTTON
+   ========================================================================== */
+
+.scope {
+  all: initial;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--spacing-base-small);
+  min-height: var(--spacing-base-small);
+  vertical-align: bottom;
+  transition: background-color $transition-base;
+}
+
+.scope:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.icon {
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
+.icon--has-label {
+  margin-right: var(--spacing-tiny);
+}
+
+.label {
+  flex-grow: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  /* @include inuit-font-size($font-size-small); */
+}

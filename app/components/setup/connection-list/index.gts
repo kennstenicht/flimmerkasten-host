@@ -10,6 +10,7 @@ import { DataConnection } from 'peerjs';
 import PeerService from 'flimmerkasten-host/services/peer';
 import bem from 'flimmerkasten-host/helpers/bem';
 import Button from 'flimmerkasten-host/components/ui/button';
+import styles from './styles.css';
 
 interface ConnectionListSignature {
   Element: HTMLDivElement;
@@ -20,7 +21,6 @@ export default class ConnectionList extends Component<ConnectionListSignature> {
   @service peer!: PeerService;
 
   // Defaults
-  blockName = 'c-setup-connection-list';
   @tracked value: string = '';
 
   // Actions
@@ -29,10 +29,10 @@ export default class ConnectionList extends Component<ConnectionListSignature> {
   }
 
   <template>
-    <div class={{bem this.blockName}} ...attributes>
+    <div class={{bem styles}} ...attributes>
       {{#if this.peer.hasConnection}}
         {{#each-in this.peer.connections as |id connection|}}
-          <div class={{bem this.blockName 'connection'}}>
+          <div class={{bem styles 'connection'}}>
             Display:
             {{connection.metadata.display.id}}
             {{id}}
@@ -56,7 +56,7 @@ export default class ConnectionList extends Component<ConnectionListSignature> {
           </div>
         {{/each-in}}
       {{else}}
-        <div class={{bem this.blockName 'connection'}}>
+        <div class={{bem styles 'connection'}}>
           {{t 'setup.connectionList.noConnection'}}
         </div>
       {{/if}}

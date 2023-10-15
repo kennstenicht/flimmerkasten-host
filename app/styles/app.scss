@@ -1,56 +1,79 @@
-/* Settings
-  ========================================================================== */
+/* Do not delete or use this file. Use assets/styles instead */
 
-// Theme
-@import "settings/settings.fonts";
-@import "settings/settings.global";
-@import "settings/settings.core";
+/* TODO: Move fonts into assets */
+@font-face {
+  font-weight: 700;
+  font-style: normal;
+  font-family: "IBM Plex Mono";
+  src:
+    local("IBM Plex Mono Bold"),
+    local("IBMPlexMono-Bold"),
+    url("/assets/fonts/ibm-plex-mono/woff2/IBMPlexMono-Bold.woff2")
+      format("woff2"),
+    url("/assets/fonts/ibm-plex-mono/woff/IBMPlexMono-Bold.woff") format("woff");
+}
 
-/* Tools
-  ========================================================================== */
+@font-face {
+  font-weight: 700;
+  font-style: italic;
+  font-family: "IBM Plex Mono";
+  src:
+    local("IBM Plex Mono Bold"),
+    local("IBMPlexMono-Bold"),
+    url("/assets/fonts/ibm-plex-mono/woff2/IBMPlexMono-BoldItalic.woff2")
+      format("woff2"),
+    url("/assets/fonts/ibm-plex-mono/woff/IBMPlexMono-BoldItalic.woff")
+      format("woff");
+}
 
-// Vendor
-@import "node_modules/sass-mq/mq";
-// App
-@import "tools/tools.attention";
-@import "tools/tools.clearfix";
-@import "tools/tools.font-size";
-@import "tools/tools.rem";
-@import "tools/tools.spacing";
+@font-face {
+  font-weight: 400;
+  font-style: italic;
+  font-family: "IBM Plex Mono";
+  src:
+    local("IBM Plex Mono Italic"),
+    local("IBMPlexMono-Italic"),
+    url("/assets/fonts/ibm-plex-mono/woff2/IBMPlexMono-Italic.woff2")
+      format("woff2"),
+    url("/assets/fonts/ibm-plex-mono/woff/IBMPlexMono-Italic.woff")
+      format("woff");
+}
 
-/* Generic
-  ========================================================================== */
+@font-face {
+  font-weight: 300;
+  font-style: normal;
+  font-family: "IBM Plex Mono";
+  src:
+    local("IBM Plex Mono Light"),
+    local("IBMPlexMono-Light"),
+    url("/assets/fonts/ibm-plex-mono/woff2/IBMPlexMono-Light.woff2")
+      format("woff2"),
+    url("/assets/fonts/ibm-plex-mono/woff/IBMPlexMono-Light.woff")
+      format("woff");
+}
 
-@import "generic/generic.box-sizing";
-@import "generic/generic.normalize";
-@import "generic/generic.reset";
-@import "generic/generic.shared";
+@font-face {
+  font-weight: 300;
+  font-style: italic;
+  font-family: "IBM Plex Mono";
+  src:
+    local("IBM Plex Mono Light"),
+    local("IBMPlexMono-Light"),
+    url("/assets/fonts/ibm-plex-mono/woff2/IBMPlexMono-LightItalic.woff2")
+      format("woff2"),
+    url("/assets/fonts/ibm-plex-mono/woff/IBMPlexMono-LightItalic.woff")
+      format("woff");
+}
 
-/* Elementes
-  ========================================================================== */
-
-@import "elements/elements.headings";
-@import "elements/elements.page";
-
-/* Objects
-  ========================================================================== */
-
-@import "objects/objects.layout";
-@import "objects/objects.wrapper";
-
-/* Components
-  ========================================================================== */
-
-@import "components/components.application-confirm-modal";
-@import "components/components.application-confirm";
-@import "components/components.application-notification";
-@import "components/components.application";
-@import "components/components.error";
-@import "components/components.setup-connection-list";
-@import "components/components.setup";
-@import "components/components.ui-button";
-
-/* Utilities
-  ========================================================================== */
-
-@import "utilities/utilities.widths";
+@font-face {
+  font-weight: 400;
+  font-style: normal;
+  font-family: "IBM Plex Mono";
+  src:
+    local("IBM Plex Mono"),
+    local("IBMPlexMono"),
+    url("/assets/fonts/ibm-plex-mono/woff2/IBMPlexMono-Regular.woff2")
+      format("woff2"),
+    url("/assets/fonts/ibm-plex-mono/woff/IBMPlexMono-Regular.woff")
+      format("woff");
+}

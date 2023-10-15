@@ -1,0 +1,25 @@
+/* ==========================================================================
+   # APPLICATION
+   ========================================================================== */
+
+.scope {
+  height: 100vh;
+}
+
+.notifications {
+  position: fixed;
+  top: var(--spacing-small);
+  right: var(--spacing-small);
+  z-index: 900;
+}
+
+.content {
+  display: block;
+  padding: var(--spacing-small);
+  height: 100%;
+  overflow-y: auto;
+}
+
+.modal {
+  position: relative;
+}
