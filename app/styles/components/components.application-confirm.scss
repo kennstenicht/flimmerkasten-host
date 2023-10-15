@@ -1,4 +1,3 @@
-
 /* ==========================================================================
    # APPLICATION CONFIRM
    ========================================================================== */
@@ -36,10 +35,10 @@
     position: relative;
     z-index: 2;
     overflow: hidden;
-    min-height: spacing('base-small');
+    min-height: spacing("base-small");
     width: 100%;
-    border-top-left-radius: spacing('small-tiny');
-    border-top-right-radius: spacing('small-tiny');
+    border-top-left-radius: spacing("small-tiny");
+    border-top-right-radius: spacing("small-tiny");
     background-color: $color-grey-lighter;
     color: $color-black;
   }

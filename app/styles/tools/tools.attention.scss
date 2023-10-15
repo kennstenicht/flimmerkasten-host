@@ -9,16 +9,14 @@
  */
 
 @mixin attention($self: false) {
-  @if($self != false) {
+  @if ($self != false) {
     &,
     &:hover,
     &:active,
     &:focus {
       @content;
     }
-  }
-
-  @else {
+  } @else {
     &:hover,
     &:active,
     &:focus {

@@ -10,20 +10,17 @@ module.exports = function (environment) {
         "'self'",
         "'unsafe-inline'",
         'eval',
-        "'unsafe-eval'"
+        "'unsafe-eval'",
       ],
       'font-src': ["'self'", 'https://fonts.gstatic.com'],
       'frame-src': ["'self'"],
-      'connect-src': [
-        "'self'",
-        'wss://flimmerkasten.herokuapp.com'
-      ],
+      'connect-src': ["'self'", 'wss://flimmerkasten.herokuapp.com'],
       'img-src': ['data:', "'self'"],
       'style-src': [
         'http://localhost:4200',
         "'self'",
         "'unsafe-inline'",
-        'https://fonts.googleapis.com'
+        'https://fonts.googleapis.com',
       ],
       'media-src': ["'self'"],
     },

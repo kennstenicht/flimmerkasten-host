@@ -9,30 +9,25 @@ import FlashMessageService from 'ember-cli-flash/services/flash-messages';
 
 export default class PeerService extends Service {
   // Services
-  @service flashMessages!: FlashMessageService;
-
+  @service declare flashMessages: FlashMessageService;
 
   // Defaults
   connections: TrackedMap<string, DataConnection> = new TrackedMap();
   peer?: Peer;
 
-
   // Constrcutor
   constructor() {
     super(...arguments);
-
 
     registerDestructor(this, () => {
       this.peer?.destroy();
     });
   }
 
-
   // Getter, setter and computed properties
   get hasConnection() {
     return Boolean(this.connections.size);
   }
-
 
   // Actions
   @action
@@ -63,21 +58,19 @@ export default class PeerService extends Service {
     }
   }
 
-
   // Tasks
   createPeerConnection = restartableTask(async () => {
     this.peer = new Peer('master-peer', {
-      host: 'flimmerkasten.herokuapp.com',
-      secure: true
+      secure: true,
     });
 
     this.peer.on('error', this.onPeerError);
     this.peer.on('connection', this.onPeerConnection);
-  })
+  });
 
   retryPeerConnection = restartableTask(async () => {
     await timeout(10000);
 
     this.createPeerConnection.perform();
-  })
+  });
 }

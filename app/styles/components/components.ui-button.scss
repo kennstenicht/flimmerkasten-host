@@ -7,8 +7,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: spacing('base-small');
-  min-height: spacing('base-small');
+  min-width: spacing("base-small");
+  min-height: spacing("base-small");
   vertical-align: bottom;
   transition: background-color $transition-base;
 
@@ -19,7 +19,7 @@
   }
 
   &__icon--has-label {
-    margin-right: spacing('tiny');
+    margin-right: spacing("tiny");
   }
 
   &__label {
@@ -31,11 +31,10 @@
     @include inuit-font-size($font-size-small);
   }
 
-
   // Primary
   &--style-primary {
-    padding: spacing('tiny') spacing('base');
-    border-radius: spacing('small-tiny');
+    padding: spacing("tiny") spacing("base");
+    border-radius: spacing("small-tiny");
     background-color: $color-primary;
     color: $color-white;
     text-align: center;
@@ -45,11 +44,10 @@
     }
   }
 
-
   // Secondary
   &--style-secondary {
-    padding: spacing('tiny') spacing('base');
-    border-radius: spacing('small-tiny');
+    padding: spacing("tiny") spacing("base");
+    border-radius: spacing("small-tiny");
     background-color: $color-grey-dark;
     color: $color-white;
     text-align: center;
@@ -59,11 +57,10 @@
     }
   }
 
-
   // Danger
   &--style-danger {
-    padding: spacing('tiny') spacing('base');
-    border-radius: spacing('small-tiny');
+    padding: spacing("tiny") spacing("base");
+    border-radius: spacing("small-tiny");
     background-color: $color-error;
     color: $color-white;
     text-align: center;
@@ -73,13 +70,12 @@
     }
   }
 
-
   // Inline
   &--style-inline {
-    padding: 0 spacing('tiny');
-    min-width: spacing('base');
-    min-height: spacing('base');
-    border-radius: spacing('tiny');
+    padding: 0 spacing("tiny");
+    min-width: spacing("base");
+    min-height: spacing("base");
+    border-radius: spacing("tiny");
     color: inherit;
     text-align: center;
 
@@ -93,12 +89,11 @@
     }
   }
 
-
   // Outline
   &--style-outline {
-    padding: spacing('tiny', - $border-width-small);
+    padding: spacing("tiny", -$border-width-small);
     border: $border-width-small solid $color-grey;
-    border-radius: spacing('small-tiny');
+    border-radius: spacing("small-tiny");
     color: inherit;
     text-align: center;
 
@@ -106,7 +101,6 @@
       background-color: $color-grey-light;
     }
   }
-
 
   // Disabled
   &:disabled {

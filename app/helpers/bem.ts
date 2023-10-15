@@ -8,7 +8,7 @@ import { isArray } from '@ember/array';
 //   }
 // }
 
-export function bem(params: [string, string], { modifiers }: any) {
+export function bem(params: [string] | [string, string], { modifiers }: any) {
   let [block, element] = params;
   let classes: string[] = [];
   let baseClass = !isEmpty(element) ? `${block}__${element}` : block;
@@ -20,7 +20,7 @@ export function bem(params: [string, string], { modifiers }: any) {
       let modifier = modifiers[key];
 
       if (isEmpty(modifier)) {
-        return
+        return;
       }
       if (typeof modifier === 'boolean') {
         if (modifier) {
@@ -41,4 +41,3 @@ export function bem(params: [string, string], { modifiers }: any) {
 }
 
 export default helper(bem);
-

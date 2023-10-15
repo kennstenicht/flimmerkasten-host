@@ -9,7 +9,6 @@ export default class ConfirmService extends Service {
   @tracked data?: any;
   @tracked resolve: Function = () => {};
 
-
   // Functions
   @action
   ask(type: string, data?: any) {
@@ -26,7 +25,6 @@ export default class ConfirmService extends Service {
     this.showPrompt = false;
     this.resolve = () => {};
   }
-
 
   // Actions
   @action

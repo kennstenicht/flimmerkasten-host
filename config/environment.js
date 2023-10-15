@@ -13,20 +13,20 @@ module.exports = function (environment) {
     },
 
     emberKeyboard: {
-      disableInputsInitializer: true
+      disableInputsInitializer: true,
     },
 
     flashMessageDefaults: {
       timeout: 4000,
       extendedTimeout: 2000,
-      injectionFactories: []
+      injectionFactories: [],
     },
 
     EmberENV: {
       EXTEND_PROTOTYPES: false,
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
-        // e.g. EMBER_NATIVE_DECORATOR_SUPPORT: true
+        EMBER_NATIVE_DECORATOR_SUPPORT: true,
       },
     },
 

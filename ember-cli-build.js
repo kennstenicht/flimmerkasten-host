@@ -9,7 +9,7 @@ module.exports = function (defaults) {
     },
     sassOptions: {
       outputStyle: 'compressed',
-    }
+    },
   });
 
   // Use `app.import` to add additional libraries to the generated
