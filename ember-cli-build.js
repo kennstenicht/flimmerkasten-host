@@ -15,9 +15,6 @@ module.exports = function (defaults) {
     'ember-cli-babel': {
       enableTypeScriptTransform: true,
     },
-    sassOptions: {
-      outputStyle: 'compressed',
-    },
   });
 
   // Use `app.import` to add additional libraries to the generated
