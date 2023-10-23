@@ -20,7 +20,7 @@
 
 .icon {
   flex-shrink: 0;
-  fill: currentColor;
+  fill: currentcolor;
 }
 
 .icon--has-label {

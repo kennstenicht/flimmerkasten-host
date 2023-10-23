@@ -6,6 +6,7 @@ import { isPresent } from '@ember/utils';
 import didInsert from '@ember/render-modifiers/modifiers/did-insert';
 import { next } from '@ember/runloop';
 import Flash from 'ember-cli-flash/flash/object';
+// @ts-ignore
 import svgJar from 'ember-svg-jar/helpers/svg-jar';
 import eq from 'ember-truth-helpers/helpers/eq';
 import bem from 'flimmerkasten-host/helpers/bem';

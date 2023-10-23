@@ -10,8 +10,9 @@
   max-width: 500px;
   border-radius: var(--spacing-tiny);
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 spacing("large") rgba($color-black, 0.4);
+  box-shadow: 0 0 var(--spacing-large) rgba(var(--color-black), 0.4);
 }
+
 .scope--type-warning {
   background-color: var(--color-warning);
   color: $color-white;
