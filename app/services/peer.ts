@@ -19,6 +19,8 @@ export default class PeerService extends Service {
   constructor() {
     super(...arguments);
 
+    this.createPeerConnection.perform();
+
     registerDestructor(this, () => {
       this.peer?.destroy();
     });
@@ -30,8 +32,7 @@ export default class PeerService extends Service {
   }
 
   // Actions
-  @action
-  onPeerConnection(connection: DataConnection) {
+  @action onPeerConnection(connection: DataConnection) {
     connection.on('data', (data: any) => {
       console.log(connection.peer, 'received', data);
     });
@@ -45,24 +46,19 @@ export default class PeerService extends Service {
     });
   }
 
-  @action
-  onPeerError(error: any) {
+  @action onPeerError(error: any) {
+    this.flashMessages.warning(`${error.type}: ${error}`);
+
     switch (error.type) {
       case 'network':
         this.retryPeerConnection.perform();
-        break;
-
-      default:
-        this.flashMessages.warning(`${error.type}: ${error}`);
         break;
     }
   }
 
   // Tasks
   createPeerConnection = restartableTask(async () => {
-    this.peer = new Peer('master-peer', {
-      secure: true,
-    });
+    this.peer = new Peer('master-peer');
 
     this.peer.on('error', this.onPeerError);
     this.peer.on('connection', this.onPeerConnection);

@@ -14,7 +14,7 @@ module.exports = function (environment) {
       ],
       'font-src': ["'self'", 'https://fonts.gstatic.com'],
       'frame-src': ["'self'"],
-      'connect-src': ["'self'", 'wss://flimmerkasten.herokuapp.com'],
+      'connect-src': ["'self'", 'wss://0.peerjs.com'],
       'img-src': ['data:', "'self'"],
       'style-src': [
         'http://localhost:4200',
